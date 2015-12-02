@@ -1,0 +1,31 @@
+{
+  "name": "Webpack-vs-Browserify",
+  "version": "0.0.1",
+  "description": "Comparison of common frontend tasks with modern bundlers",
+  "main": "index.js",
+  "scripts": {
+    "example:webpack": "node webpack/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olegakbarov/webpack-vs-browserify.git"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "browserify"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/olegakbarov/webpack-vs-browserify/issues"
+  },
+  "homepage": "https://github.com/olegakbarov/react-component-boilerplate",
+  "devDependencies": {
+    "babel": "5.8.23",
+    "babel-plugin-react-transform": "^1.1.1",
+    "babel-polyfill": "^6.2.0",
+    "eslint-plugin-react": "^3.11.1",
+    "react-dom": "^0.14.3",
+    "react": "^0.14"
+  }
+}
