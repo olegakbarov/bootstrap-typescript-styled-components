@@ -1,11 +1,9 @@
+/* eslint-env browser */
 import React from 'react';
+import RD from 'react-dom';
+import App from './App';
 
-export default class Component extends React.Component {
-  render() {
-    return (
-      <div>
-        Hello, bundlers.
-      </div>
-    );
-  }
-}
+RD.render(
+  <App />,
+  document.getElementById('root')
+);

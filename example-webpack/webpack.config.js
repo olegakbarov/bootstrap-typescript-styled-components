@@ -9,29 +9,26 @@ module.exports = cfg = {
   entry: [
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
-    path.join(__dirname, './root')
+    path.join(__dirname, '../src/index')
   ],
 
   output: {
-    path: path.join(__dirname, '.'),
-    publicPath: '/assets/',
+    path: path.join(__dirname, '../public'),
+    publicPath: '/',
     filename: 'bundle.js'
   },
 
-  resolve: {
-    alias: {
-      'Component': path.join(__dirname, '../src')
-    },
-    extensions: ['', '.js']
-  },
-
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.EnvironmentPlugin('NODE_ENV')
+    new webpack.NoErrorsPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
 
   devServer: {
-    contentBase: __dirname
+    contentBase: path.join(__dirname, '../public')
+  },
+
+  resolve: {
+    extensions: ['', '.js']
   },
 
   module: {
@@ -39,14 +36,7 @@ module.exports = cfg = {
       test: /\.js$/,
       loaders: ['babel'],
       exclude: /node_modules/,
-      include: [
-        __dirname,
-        path.resolve(__dirname, '../src')
-      ]
-    },
-    {
-      test: /\.css$/,
-      loader: 'style-loader!css-loader'
+      include: path.join(__dirname, '..', 'src')
     }]
   }
 };
