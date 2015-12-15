@@ -2,7 +2,7 @@
 
 brought to you by [olegakbarov](https://github.com/olegakbarov) and [faergeek](https://github.com/faergeek)
 
-#### tl;dr React app with hot reloading with both Webpack and Browswerify build
+#### tl;dr Hot-reloadable React app with both Webpack and Browswerify build side by side
 
 The idea behind this project is to compare [Webpack](https://webpack.github.io/) and [Browserify](http://browserify.org/) as two most popular module bundlers for JS. We've put both setups side by side and configured them up for simple yet common workflow including React app with hot reload. Take a look and compare different approaches and make your next descidion consiously.
 
