@@ -2,6 +2,8 @@
 
 brought to you by [olegakbarov](https://github.com/olegakbarov) and [faergeek](https://github.com/faergeek)
 
+#### tl;dr React app with hot reloading with both Webpack and Browswerify build
+
 The idea behind this project is to compare [Webpack](https://webpack.github.io/) and [Browserify](http://browserify.org/) as two most popular module bundlers for JS. We've put both setups side by side and configured them up for simple yet common workflow including React app with hot reload. Take a look and compare different approaches and make your next descidion consiously.
 
 We think about it as a TodoMVC for module bundlers if you will.
@@ -16,7 +18,15 @@ $ npm i
 
 to run the browserify example go to `/example-browserify` and `npm start`, then navigate to `http://192.168.0.102:9966/`
 
-for webpack example go to `/example-webpack`, `npm run start` and go to http://localhost:8080`
+for webpack example go to `/example-webpack`, `npm run start` and go to `http://localhost:8080`
+
+### Structure
+
+React app sits in `/src` folder and consists of extremely simple skeleton. You might tweak it just to make sure that hot reloading on both examples work as expected.
+
+`Public` folder is good old place for statics (in our case just a html template).
+
+`example-webpack` and `example-broweserify` gives you understanding on how to achieve this workflow with each bundler.
 
 ### More bundlers?
 
