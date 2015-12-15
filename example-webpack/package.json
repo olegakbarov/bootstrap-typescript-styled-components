@@ -9,12 +9,8 @@
   "author": "Oleg Akbarov",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "5.8.0",
     "babel-eslint": "^4.1.6",
-    "babel-loader": "5.4.0",
-    "babel-plugin-react-transform": "^1.1.1",
     "babel-plugin-transform-runtime": "^6.3.13",
-    "eslint-plugin-react": "^3.11.2",
     "react-transform-hmr": "^1.0.1",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"

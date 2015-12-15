@@ -1,6 +1,6 @@
 {
   "name": "Webpack-vs-Browserify",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Comparison of common frontend tasks with modern bundlers",
   "main": "index.js",
   "scripts": {
