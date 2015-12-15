@@ -4,7 +4,9 @@
   "description": "Comparison of common frontend tasks with modern bundlers",
   "main": "index.js",
   "scripts": {
-    "webpack": "node example-webpack/server.js"
+    "browserify": "cd example-browserify && npm start",
+    "webpack": "node example-webpack/server.js",
+    "postinstall": "cd example-browserify && npm i && cd ../example-webpack && npm i"
   },
   "repository": {
     "type": "git",
