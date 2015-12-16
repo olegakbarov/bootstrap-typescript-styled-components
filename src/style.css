@@ -1,0 +1,13 @@
+.title {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+  animation: rotation 5s linear infinite alternate;
+}
+
+@keyframes rotation {
+  50% {
+    transform: translate3d(200%, 0, 0)
+  }
+}
+

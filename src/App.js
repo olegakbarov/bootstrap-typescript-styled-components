@@ -1,11 +1,10 @@
 import React from 'react';
+import { title } from './style.css';
 
 export default class App extends React.Component {
   render() {
     return (
-      <div>
-        <h1> Hello, bundlers! </h1>
-      </div>
+      <h1 className={title}>Hello, bundlers!</h1>
     );
   }
 }
