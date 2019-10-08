@@ -1,0 +1,32 @@
+{
+  "name": "@bootstrap-styled-components/form",
+  "version": "4.0.0",
+  "description": "Form components and helpers",
+  "keywords": [
+    "form",
+    "bootstrap",
+    "styled",
+    "components"
+  ],
+  "author": "Oleg Akbarov <olegakbarov@gmail.com>",
+  "homepage": "https://github.com/olegakbarov/bootstrap-styled-components",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olegakbarov/bootstrap-styled-components.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/olegakbarov/bootstrap-styled-components/issues"
+  }
+}

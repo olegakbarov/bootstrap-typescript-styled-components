@@ -1,15 +1,39 @@
 {
-    "extends": "airbnb",
-    "rules": {
-        "arrow-parens": [
-            "error",
-            "always"
-        ],
-        "import/prefer-default-export": "off",
-        "react/jsx-filename-extension": "off",
-        "import/no-extraneous-dependencies": "off"
-    },
-    "env": {
-        "jest": true
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint"
+  ],
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "rules": {
+    "@typescript-eslint/camelcase": ["warn", { "properties": "never" }],
+    "@typescript-eslint/explicit-function-return-type": ["off"],
+    "@typescript-eslint/no-inferrable-types": ["off"],
+    "@typescript-eslint/no-explicit-any": ["off"],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "@typescript-eslint/ban-ts-ignore": ["off"],
+    "@typescript-eslint/no-use-before-define": ["off"],
+    "@typescript-eslint/no-non-null-assertion": ["off"],
+    "@typescript-eslint/no-unused-vars": ["warn", { "ignoreRestSiblings": true }]
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
     }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "globals": {
+    "process": "readonly"
+  }
 }
+  
