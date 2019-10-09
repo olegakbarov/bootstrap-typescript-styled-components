@@ -1,10 +1,13 @@
-import { theme as defaultTheme } from '../theme';
+import { theme as defaultTheme } from "../theme";
+
+type Theme = typeof defaultTheme;
 
 // ---------------------------------------------------------------------------
 
-export const getConfigProperty = (theme, ...propertyPath) => {
+export const getConfigProperty = (theme: Theme, ...propertyPath) => {
   // Function for getting values from themes
-  const getterFunction = (...path) => getConfigProperty(theme, ...path);
+  const getterFunction = (...path: string[]) =>
+    getConfigProperty(theme, ...path);
 
   // Function for gettings values from objects while 'dereferencing' all
   // functional values
@@ -14,7 +17,7 @@ export const getConfigProperty = (theme, ...propertyPath) => {
     for (let i = 0; value !== undefined && i < path.length; i += 1) {
       let tempValue = value[path[i]];
 
-      while (typeof tempValue === 'function') {
+      while (typeof tempValue === "function") {
         tempValue = tempValue(getterFunction);
       }
 
@@ -35,38 +38,37 @@ export const getConfigProperty = (theme, ...propertyPath) => {
 };
 
 // Helper for creating basic getter function for acessor's config properies
-export const makeGetter = (property) => (
-  (props, accessor, ...path) =>
-    getConfigProperty(props.theme, accessor, property, ...path)
-);
+export const makeGetter = (property: string) => (props, accessor, ...path) =>
+  getConfigProperty(props.theme, accessor, property, ...path);
 
 // ---------------------------------------------------------------------------
 
-export const getBoxShadow = makeGetter('boxShadow');
-export const getMargin = makeGetter('margin');
-export const getPadding = makeGetter('padding');
-export const getBorder = makeGetter('border');
-export const getBorderRadius = makeGetter('borderRadius');
-export const getFontWeight = makeGetter('fontWeight');
-export const getFontSize = makeGetter('fontSize');
-export const getFontFamily = makeGetter('fontFamily');
-export const getWidth = makeGetter('width');
-export const getHeight = makeGetter('height');
+export const getBoxShadow = makeGetter("boxShadow");
+export const getMargin = makeGetter("margin");
+export const getPadding = makeGetter("padding");
+export const getBorder = makeGetter("border");
+export const getBorderRadius = makeGetter("borderRadius");
+export const getFontWeight = makeGetter("fontWeight");
+export const getFontSize = makeGetter("fontSize");
+export const getFontFamily = makeGetter("fontFamily");
+export const getWidth = makeGetter("width");
+export const getHeight = makeGetter("height");
 
-export const getConcreteBreakpointSize = (props, size) => getConfigProperty(props.theme, 'screenSize', size);
+export const getConcreteBreakpointSize = (props, size) =>
+  getConfigProperty(props.theme, "screenSize", size);
 
-export const getBreakpointSize = (props) => {
+export const getBreakpointSize = props => {
   if (props.sm || props.expandSm) {
-    return getConcreteBreakpointSize(props.theme, 'sm');
+    return getConcreteBreakpointSize(props.theme, "sm");
   } else if (props.md || props.expandMd) {
-    return getConcreteBreakpointSize(props.theme, 'md');
+    return getConcreteBreakpointSize(props.theme, "md");
   } else if (props.lg || props.expandLg) {
-    return getConcreteBreakpointSize(props.theme, 'lg');
+    return getConcreteBreakpointSize(props.theme, "lg");
   } else if (props.xl || props.expandXl) {
-    return getConcreteBreakpointSize(props.theme, 'xl');
+    return getConcreteBreakpointSize(props.theme, "xl");
   }
 
-  return '';
+  return "";
 };
 
 export const getColor = (props, accessor, ...path) => {
@@ -76,10 +78,10 @@ export const getColor = (props, accessor, ...path) => {
     const color = availableColors[i];
 
     if (props[color]) {
-      return getConfigProperty(props.theme, accessor, 'colors', color, ...path);
+      return getConfigProperty(props.theme, accessor, "colors", color, ...path);
     }
   }
 
   // Default
-  return getConfigProperty(props.theme, accessor, 'colors', 'default', ...path);
+  return getConfigProperty(props.theme, accessor, "colors", "default", ...path);
 };

@@ -1,7 +1,7 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
+import React from "react";
+import styled, { css } from "styled-components";
 
-import { Input, Textarea, Select } from '@bootstrap-styled-components/base';
+import { Input, Textarea, Select } from "@bootstrap-styled-components/base";
 
 import {
   theme,
@@ -12,30 +12,46 @@ import {
   getBorderRadius,
   getHeight,
   getBoxShadow,
-  getConcreteBreakpointSize,
-} from '@bootstrap-styled-components/config';
+  getConcreteBreakpointSize
+} from "@bootstrap-styled-components/config";
 
 interface FormColtrolProps {
-  readonly: boolean
-  disabled: boolean
-  valid: boolean
-  invalid: boolean
+  readonly: boolean;
+  disabled: boolean;
+  valid: boolean;
+  invalid: boolean;
+  formInline: boolean;
+  lg: boolean;
+  sm: boolean;
+  multiple: boolean;
+  select: boolean;
+  textarea: boolean;
+  noRadius: boolean;
+  pill: boolean;
 }
 
 const backgroundColor = (props: FormColtrolProps) => {
   if (props.disabled || props.readonly) {
     return css`
-      background-color: ${getColor(props, 'formControl', 'backgroundColorDisabledReadonly')};
+      background-color: ${getColor(
+        props,
+        "formControl",
+        "backgroundColorDisabledReadonly"
+      )};
       &:focus {
-        background-color: ${getColor(props, 'formControl', 'backgroundColorDisabledReadonly')};
+        background-color: ${getColor(
+          props,
+          "formControl",
+          "backgroundColorDisabledReadonly"
+        )};
       }
     `;
   }
 
   return css`
-    background-color: ${getColor(props, 'formControl', 'background')};
+    background-color: ${getColor(props, "formControl", "background")};
     &:focus {
-      background-color: ${getColor(props, 'formControl', 'background')};
+      background-color: ${getColor(props, "formControl", "background")};
     }
   `;
 };
@@ -43,25 +59,26 @@ const backgroundColor = (props: FormColtrolProps) => {
 const border = (props: FormColtrolProps) => {
   if (props.valid) {
     return css`
-      border-color: ${getColor(props, 'formControl', 'borderValid')};
+      border-color: ${getColor(props, "formControl", "borderValid")};
       &:focus {
-        border-color: ${getColor(props, 'formControl', 'borderValid')};
-      };
+        border-color: ${getColor(props, "formControl", "borderValid")};
+      }
     `;
   } else if (props.invalid) {
     return css`
-      border-color: ${getColor(props, 'formControl', 'borderInvalid')};
+      border-color: ${getColor(props, "formControl", "borderInvalid")};
       &:focus {
-        border-color: ${getColor(props, 'formControl', 'borderInvalid')};
-      };
+        border-color: ${getColor(props, "formControl", "borderInvalid")};
+      }
     `;
   }
 
   return css`
-    border: ${getBorder(props, 'formControl', 'default')} ${getColor(props, 'formControl', 'border')};
+    border: ${getBorder(props, "formControl", "default")}
+      ${getColor(props, "formControl", "border")};
     &:focus {
-      border-color: ${getColor(props, 'formControl', 'border')};
-    };
+      border-color: ${getColor(props, "formControl", "border")};
+    }
   `;
 };
 
@@ -69,25 +86,27 @@ const boxShadow = (props: FormColtrolProps) => {
   if (props.valid) {
     return css`
       &:focus {
-        box-shadow: ${getBoxShadow(props, 'formControl', 'default')} ${getColor(props, 'formControl', 'formControlBoxShadowValid')};
-      };
+        box-shadow: ${getBoxShadow(props, "formControl", "default")}
+          ${getColor(props, "formControl", "formControlBoxShadowValid")};
+      }
     `;
   } else if (props.invalid) {
     return css`
       &:focus {
-        box-shadow: ${getBoxShadow(props, 'formControl', 'default')} ${getColor(props, 'formControl', 'formControlBoxShadowInvalid')};
-      };
+        box-shadow: ${getBoxShadow(props, "formControl", "default")}
+          ${getColor(props, "formControl", "formControlBoxShadowInvalid")};
+      }
     `;
   }
 
   return css`
     &:focus {
       box-shadow: 0;
-    };
+    }
   `;
 };
 
-const opacity = (props) => {
+const opacity = (props: FormColtrolProps) => {
   if (props.disabled || props.readonly) {
     return css`
       opacity: 1;
@@ -97,103 +116,102 @@ const opacity = (props) => {
     `;
   }
 
-  return '';
+  return "";
 };
 
-const formControlFormInline = (props) => (
+const formControlFormInline = (props: FormColtrolProps) =>
   props.formInline &&
   css`
-    @media (min-width: ${getConcreteBreakpointSize(props, 'sm')}) {
+    @media (min-width: ${getConcreteBreakpointSize(props, "sm")}) {
       display: inline-block;
       width: auto;
       vertical-align: middle;
-    };
-  `
-);
+    }
+  `;
 
-const padding = (props) => {
+const padding = (props: FormColtrolProps) => {
   if (props.lg) {
     return css`
-      padding-right: ${getPadding(props, 'formControl', 'lgRight')};
-      padding-left: ${getPadding(props, 'formControl', 'lgLeft')};
-      padding: ${getPadding(props, 'formControl', 'lgPadding')};
+      padding-right: ${getPadding(props, "formControl", "lgRight")};
+      padding-left: ${getPadding(props, "formControl", "lgLeft")};
+      padding: ${getPadding(props, "formControl", "lgPadding")};
     `;
   } else if (props.sm) {
     return css`
-    padding-right: ${getPadding(props, 'formControl', 'smRight')};
-    padding-left: ${getPadding(props, 'formControl', 'smLeft')};
-    padding: ${getPadding(props, 'formControl', 'smPadding')};
+      padding-right: ${getPadding(props, "formControl", "smRight")};
+      padding-left: ${getPadding(props, "formControl", "smLeft")};
+      padding: ${getPadding(props, "formControl", "smPadding")};
     `;
   }
 
   return css`
-    padding: ${getPadding(props, 'formControl', 'defaultPadding')};
+    padding: ${getPadding(props, "formControl", "defaultPadding")};
   `;
 };
 
-const fontSize = (props) => {
+const fontSize = (props: FormColtrolProps) => {
   if (props.lg) {
     return css`
-      font-size: ${getFontSize(props, 'formControl', 'lg')};
+      font-size: ${getFontSize(props, "formControl", "lg")};
     `;
   } else if (props.sm) {
     return css`
-      font-size: ${getFontSize(props, 'formControl', 'sm')};
+      font-size: ${getFontSize(props, "formControl", "sm")};
     `;
   }
 
   return css`
-    font-size: ${getFontSize(props, 'formControl', 'default')};
+    font-size: ${getFontSize(props, "formControl", "default")};
   `;
 };
 
-const borderRadius = (props) => {
+const borderRadius = (props: FormColtrolProps) => {
   if (props.noRadius) {
     return css`
-      border-radius: ${getBorderRadius(props, 'formControl', 'noRadius')};
+      border-radius: ${getBorderRadius(props, "formControl", "noRadius")};
     `;
   } else if (props.pill) {
     return css`
-      border-radius: ${getBorderRadius(props, 'formControl', 'pill')};
+      border-radius: ${getBorderRadius(props, "formControl", "pill")};
     `;
   } else if (props.lg) {
     return css`
-      border-radius: ${getBorderRadius(props, 'formControl', 'lg')};
+      border-radius: ${getBorderRadius(props, "formControl", "lg")};
     `;
   } else if (props.sm) {
     return css`
-      border-radius: ${getBorderRadius(props, 'formControl', 'sm')};
+      border-radius: ${getBorderRadius(props, "formControl", "sm")};
     `;
   }
 
   return css`
-    border-radius: ${getBorderRadius(props, 'formControl', 'default')};
+    border-radius: ${getBorderRadius(props, "formControl", "default")};
   `;
 };
 
-const height = (props) => {
+const height = (props: FormColtrolProps) => {
   if (props.lg && !props.multiple && props.select) {
     return css`
-      height: ${getHeight(props, 'formControl', 'selectLg')};
+      height: ${getHeight(props, "formControl", "selectLg")};
     `;
   } else if (props.sm && !props.multiple && props.select) {
     return css`
-      height: ${getHeight(props, 'formControl', 'selectSm')};
+      height: ${getHeight(props, "formControl", "selectSm")};
     `;
   } else if (!props.multiple && props.select) {
     return css`
-      height: ${getHeight(props, 'formControl', 'select')};
+      height: ${getHeight(props, "formControl", "select")};
     `;
   }
 
-  return '';
+  return "";
 };
 
 const formControlStyle = () => css`
     display: block;
     width: 100%;
     line-height: 1.5;
-    color: ${(props) => getColor(props, 'formControl', 'color')};
+    color: ${props => getColor(props, "formControl", "color")};
     background-clip: padding-box;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     box-sizing: border-box;
@@ -202,23 +220,24 @@ const formControlStyle = () => css`
       border: 0;
     };
     &:focus {
-      color: ${(props) => getColor(props, 'formControl', 'color')};
+      color: ${props => getColor(props, "formControl", "color")};
       outline: 0;
-      box-shadow: 0 0 0 0.2rem ${(props) => getColor(props, 'formControl', 'boxShadowFocus')};
+      box-shadow: 0 0 0 0.2rem ${props =>
+        getColor(props, "formControl", "boxShadowFocus")};
     };
     &::placeholder {
-      color: ${(props) => getColor(props, 'formControl', 'placeholder')};
+      color: ${props => getColor(props, "formControl", "placeholder")};
       opacity: 1;
     };
-    ${(props) => backgroundColor(props)}
-    ${(props) => border(props)}
-    ${(props) => boxShadow(props)}
-    ${(props) => opacity(props)}
-    ${(props) => formControlFormInline(props)}
-    ${(props) => padding(props)}
-    ${(props) => fontSize(props)}
-    ${(props) => borderRadius(props)}
-    ${(props) => height(props)}
+    ${props => backgroundColor(props)}
+    ${props => border(props)}
+    ${props => boxShadow(props)}
+    ${props => opacity(props)}
+    ${props => formControlFormInline(props)}
+    ${props => padding(props)}
+    ${props => fontSize(props)}
+    ${props => borderRadius(props)}
+    ${props => height(props)}
   `;
 
 const FormControlInput = styled(Input)`
@@ -232,12 +251,12 @@ const FormControlTextarea = styled(Textarea)`
 const FormControlSelect = styled(Select)`
   ${formControlStyle};
   &:focus::-ms-value {
-    color: ${(props) => getColor(props, 'formControl', 'color')};
-    background-color: ${(props) => getColor(props, 'formControl', 'background')};
-  };
+    color: ${props => getColor(props, "formControl", "color")};
+    background-color: ${props => getColor(props, "formControl", "background")};
+  }
 `;
 
-const FormControl = (props) => {
+const FormControl = (props: FormColtrolProps) => {
   if (props.textarea) {
     return <FormControlTextarea {...props} />;
   } else if (props.select) {
@@ -248,7 +267,7 @@ const FormControl = (props) => {
 };
 
 FormControl.defaultProps = {
-  theme,
+  theme
 };
 
 export { FormControl };

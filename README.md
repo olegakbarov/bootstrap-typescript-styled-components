@@ -1,4 +1,4 @@
-# styled-bootstrap-components
+# bootstrap-styled-components
 
 <!-- [![npm](https://img.shields.io/npm/v/styled-bootstrap-components.svg?style=flat-square)](https://www.npmjs.com/package/styled-bootstrap-components) -->
 <!-- [![Travis branch](https://img.shields.io/travis/aichbauer/styled-bootstrap-components/master.svg?style=flat-square)](https://travis-ci.org/aichbauer/styled-bootstrap-components) -->
