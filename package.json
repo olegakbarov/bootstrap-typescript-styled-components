@@ -9,7 +9,7 @@
     "compile": "tsc -p tsconfig.build.json"
   },
   "license": "MIT",
-  "author": "Lukas Aichbauer <l.aichbauer@gmail.com>",
+  "author": "Oleg Akbarov <olegakbarov@gmail.com>",
   "keywords": [
     "components",
     "react",
@@ -24,6 +24,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/olegakbarov/bootstrap-styled-components.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "bugs": {
     "url": "https://github.com/olegakbarov/bootstrap-styled-components/issues"
