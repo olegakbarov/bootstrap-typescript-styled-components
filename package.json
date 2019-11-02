@@ -1,9 +1,8 @@
 {
   "name": "bootstrap-styled-components",
   "description": "The bootstrap components made with styled-components",
-  "main": "dist/index",
+  "private": true,
   "scripts": {
-    "precommit": "lint-staged",
     "test": "jest --coverage --collectCoverageFrom=packages/**/src/**/*.js",
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist",
@@ -37,12 +36,6 @@
     "url": "https://github.com/olegakbarov/bootstrap-styled-components/issues"
   },
   "homepage": "https://github.com/olegakbarov/bootstrap-styled-components",
-  "lint-staged": {
-    "./packages/**/*.js": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
   "devDependencies": {
     "eslint": "^4.18.2",
     "eslint-plugin-import": "^2.9.0",
@@ -52,7 +45,6 @@
     "jest": "^23.6.0",
     "jest-styled-components": "^6.3.1",
     "lerna": "^3.16.4",
-    "lint-staged": "^8.1.4",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-test-renderer": "^16.7.0",

@@ -1,11 +1,7 @@
 # `config`
 
-> TODO: description
+`config` package provides theme configuration file and utilities for it.
 
-## Usage
+`getStyle` provides typesafe access to CSS properties of config
 
-```
-const config = require('config');
-
-// TODO: DEMONSTRATE API
-```
+`getColor` provides access to colors with respect to provided props
