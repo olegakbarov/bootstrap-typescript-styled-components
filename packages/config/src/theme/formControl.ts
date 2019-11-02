@@ -1,43 +1,67 @@
+import shared from "./shared";
+import { Theme, ThemedProps } from "@bootstrap-styled-components/config";
+
+type FormControlOwnProps =
+  | "readonly"
+  | "disabled"
+  | "valid"
+  | "invalid"
+  | "formInline"
+  | "lg"
+  | "sm"
+  | "multiple"
+  | "select"
+  | "textarea"
+  | "noRadius"
+  | "pill";
+
+export type FormControlProps = ThemedProps<
+  {
+    [K in keyof Theme["button"]["bscolors"]]: boolean;
+  }
+> &
+  { [k in FormControlOwnProps]: boolean };
+
 const formControl = {
-  colors: {
+  bscolors: {
     default: {
-      color: (get) => get('colorScheme', 'dark'),
-      background: (get) => get('colorScheme', 'white'),
-      border: (get) => get('colorScheme', 'darkLighter'),
-      borderFocus: (get) => get('colorScheme', 'darkLight'),
-      boxShadowFocus: (get) => get('colorScheme', 'darkerBoxShadow'),
-      placeholder: (get) => get('colorScheme', 'secondary'),
-      backgroundColorDisabledReadonly: (get) => get('colorScheme', 'whiteDark'),
-      borderValid: (get) => get('colorScheme', 'success'),
-      formControlBoxShadowValid: (get) => get('colorScheme', 'successBoxShadow'),
-      borderInvalid: (get) => get('colorScheme', 'danger'),
-      formControlBoxShadowInvalid: (get) => get('colorScheme', 'dangerBoxShadow'),
-    },
+      color: shared.colorScheme.dark,
+      background: shared.colorScheme.white,
+      border: shared.colorScheme.darkLighter,
+      borderFocus: shared.colorScheme.darkLight,
+      boxShadowFocus: shared.colorScheme.darkerBoxShadow,
+      placeholder: shared.colorScheme.secondary,
+      backgroundColorDisabledReadonly: shared.colorScheme.whiteDark,
+      borderValid: shared.colorScheme.success,
+      formControlBoxShadowValid: shared.colorScheme.successBoxShadow,
+      borderInvalid: shared.colorScheme.danger,
+      formControlBoxShadowInvalid: shared.colorScheme.dangerBoxShadow
+    }
   },
-  borderRadius: (get) => get('globals', 'borderRadius'),
-  border: (get) => get('globals', 'border'),
+  borderRadius: shared.globals.borderRadius,
+  border: shared.globals.border,
   boxShadow: {
-    default: '0 0 0 0.2rem',
+    default: "0 0 0 0.2rem"
   },
   padding: {
-    smRight: '0',
-    smLeft: '0',
-    lgRight: '0',
-    lgLeft: '0',
-    smPadding: '0.25rem 0.5rem',
-    lgPadding: '0.5rem 1rem',
-    defaultPadding: '0.375rem 0.75rem',
+    smRight: "0",
+    smLeft: "0",
+    lgRight: "0",
+    lgLeft: "0",
+    smPadding: "0.25rem 0.5rem",
+    lgPadding: "0.5rem 1rem",
+    defaultPadding: "0.375rem 0.75rem"
   },
   fontSize: {
-    sm: '0.875rem',
-    lg: '1.25rem',
-    default: '1rem',
+    sm: "0.875rem",
+    lg: "1.25rem",
+    default: "1rem"
   },
   height: {
-    select: 'calc(2.25rem + 2px)',
-    selectLg: 'calc(2.875rem + 2px)',
-    selectSm: 'calc(1.8125rem + 2px)',
-  },
+    select: "calc(2.25rem + 2px)",
+    selectLg: "calc(2.875rem + 2px)",
+    selectSm: "calc(1.8125rem + 2px)"
+  }
 };
 
 export { formControl };

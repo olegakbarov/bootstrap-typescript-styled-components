@@ -2,6 +2,9 @@
   "name": "@bootstrap-styled-components/base",
   "version": "4.0.0",
   "description": "Base components",
+  "scripts": {
+    "build": "tsc"
+  },
   "keywords": [
     "bootstrap",
     "styled",
@@ -21,9 +24,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/olegakbarov/bootstrap-styled-components.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
     "url": "https://github.com/olegakbarov/bootstrap-styled-components/issues"

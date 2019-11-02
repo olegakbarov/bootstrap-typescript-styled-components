@@ -1,12 +1,36 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "paths": {
+      "@bootstrap-styled-components/base": ["base/src"],
+      "@bootstrap-styled-components/config": ["config/src"],
+      "@bootstrap-styled-components/form": ["base/form"]
+    },
+    "module": "esnext",
     "target": "es5",
-    "sourceMap": true
+    "lib": ["es6", "dom"],
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "forceConsistentCasingInFileNames": false,
+    "noImplicitReturns": true,
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "pretty": true,
+    "removeComments": true,
+    "typeRoots": ["node_modules/@types"],
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": false,
+    "esModuleInterop": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "noEmit": true,
+    "noUnusedLocals": false
   },
 
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "exclude": ["node_modules", "build", "scripts", "webpack", "jest"]
 }

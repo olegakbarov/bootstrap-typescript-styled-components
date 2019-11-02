@@ -1,61 +1,81 @@
-import { theme as defaultTheme } from "../theme";
+import { theme } from "../theme";
+import { ThemedStyledProps } from "styled-components";
 
-type Theme = typeof defaultTheme;
+export type Theme = typeof theme;
+export type ThemedProps<O extends {}> = ThemedStyledProps<O, Theme>;
 
-// ---------------------------------------------------------------------------
+type BSColors<Compo extends keyof Theme> = keyof Theme[Compo]["bscolors"];
 
-export const getConfigProperty = (theme: Theme, ...propertyPath) => {
-  // Function for getting values from themes
-  const getterFunction = (...path: string[]) =>
-    getConfigProperty(theme, ...path);
+export function getStyle<
+  P extends Theme,
+  N extends keyof Theme,
+  S extends keyof P[N],
+  X extends keyof P[N][S]
+>(p: P, n: N, s: S, x: X): P[N][S][X];
 
-  // Function for gettings values from objects while 'dereferencing' all
-  // functional values
-  const receiveValueSafe = (initialValue, ...path) => {
-    let value = initialValue;
+export function getStyle<
+  P extends Theme,
+  N extends keyof Theme,
+  S extends keyof P[N],
+  X extends keyof P[N][S],
+  Y extends keyof P[N][S][X]
+>(p: P, n: N, s: S, x: X, y: Y): P[N][S][X][Y];
 
-    for (let i = 0; value !== undefined && i < path.length; i += 1) {
-      let tempValue = value[path[i]];
+export function getStyle<
+  P extends Theme,
+  N extends keyof Theme,
+  S extends keyof P[N],
+  X extends keyof P[N][S],
+  Y extends keyof P[N][S][X],
+  Z extends keyof P[N][S][X][Y]
+>(p: P, n: N, s: S, x: X, y: Y, z: Z): P[N][S][X][Y][Z];
 
-      while (typeof tempValue === "function") {
-        tempValue = tempValue(getterFunction);
-      }
+export function getStyle<
+  T extends Theme,
+  N extends keyof Theme,
+  S extends keyof Theme[N],
+  X extends keyof Theme[N][S],
+  Y extends keyof Theme[N][S][X],
+  Z extends keyof Theme[N][S][X][Y]
+>(p: T, name: N, style: S, x: X, y?: Y, z?: Z) {
+  if (y && z) {
+    return p[name][style][x][y][z];
+  } else {
+    return y ? p[name][style][x][y] : p[name][style];
+  }
+}
 
-      value = tempValue;
+export function getColor<
+  P extends { theme: Theme },
+  N extends keyof Theme,
+  X extends keyof Theme[N]["bscolors"]["default"]
+>(props: P, compo: N, x: X): Theme[N]["bscolors"]["default"][X];
+
+export function getColor<
+  P extends { theme: Theme } & { [K in BSColors<N>]?: boolean },
+  N extends keyof Theme,
+  B extends keyof Theme[N]["bscolors"]
+>(props: P, compo: N, style: B) {
+  const propsArr = Object.keys(props);
+  let bscolor: string | null = null;
+  const bscolors = Object.keys(theme[compo]);
+
+  propsArr.forEach((s: string) => {
+    if (bscolors.includes(s)) {
+      bscolor = s;
     }
+  });
 
-    return value;
-  };
-
-  const value = receiveValueSafe(theme, ...propertyPath);
-
-  // Use default theme if property is not found in current theme
-  if (value === undefined) {
-    return receiveValueSafe(defaultTheme, ...propertyPath);
+  if (bscolor) {
+    return getStyle(props.theme, compo, "bscolors", bscolor, style);
   }
 
-  return value;
-};
-
-// Helper for creating basic getter function for acessor's config properies
-export const makeGetter = (property: string) => (props, accessor, ...path) =>
-  getConfigProperty(props.theme, accessor, property, ...path);
-
-// ---------------------------------------------------------------------------
-
-export const getBoxShadow = makeGetter("boxShadow");
-export const getMargin = makeGetter("margin");
-export const getPadding = makeGetter("padding");
-export const getBorder = makeGetter("border");
-export const getBorderRadius = makeGetter("borderRadius");
-export const getFontWeight = makeGetter("fontWeight");
-export const getFontSize = makeGetter("fontSize");
-export const getFontFamily = makeGetter("fontFamily");
-export const getWidth = makeGetter("width");
-export const getHeight = makeGetter("height");
+  // Default
+  return props.theme[compo]["bscolors"]["default"];
+}
 
 export const getConcreteBreakpointSize = (props, size) =>
-  getConfigProperty(props.theme, "screenSize", size);
+  props.theme["screenSize"][size];
 
 export const getBreakpointSize = props => {
   if (props.sm || props.expandSm) {
@@ -69,19 +89,4 @@ export const getBreakpointSize = props => {
   }
 
   return "";
-};
-
-export const getColor = (props, accessor, ...path) => {
-  const availableColors = Object.keys(defaultTheme.colorScheme);
-
-  for (let i = 0; i < availableColors.length; i += 1) {
-    const color = availableColors[i];
-
-    if (props[color]) {
-      return getConfigProperty(props.theme, accessor, "colors", color, ...path);
-    }
-  }
-
-  // Default
-  return getConfigProperty(props.theme, accessor, "colors", "default", ...path);
 };

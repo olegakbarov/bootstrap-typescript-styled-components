@@ -1,36 +1,25 @@
-import { theme } from './theme';
+import { theme, colorScheme } from "./theme";
 import {
-  getBorder,
-  getBorderRadius,
-  getBoxShadow,
   getColor,
-  getFontFamily,
-  getFontSize,
-  getFontWeight,
-  getHeight,
-  getMargin,
-  getPadding,
-  getConfigProperty,
+  getStyle,
   getBreakpointSize,
   getConcreteBreakpointSize,
-  getWidth,
-} from './utils';
+  ThemedProps
+} from "./utils";
+
+export type Theme = typeof theme;
+
+import { ButtonProps } from "./theme/button";
+import { FormControlProps } from "./theme/formControl";
 
 export {
   theme,
-  // utils
-  getBorder,
-  getBorderRadius,
-  getBoxShadow,
+  colorScheme,
   getColor,
-  getFontFamily,
-  getFontSize,
-  getFontWeight,
-  getHeight,
-  getMargin,
-  getPadding,
-  getConfigProperty,
+  getStyle,
   getBreakpointSize,
   getConcreteBreakpointSize,
-  getWidth,
+  ButtonProps,
+  FormControlProps,
+  ThemedProps
 };

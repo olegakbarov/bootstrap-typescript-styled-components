@@ -1,0 +1,60 @@
+{
+  "name": "styled-button-component",
+  "version": "4.0.0",
+  "description": "The bootstrap button component created with styled-components",
+  "main": "./lib/index.js",
+  "private": false,
+  "scripts": {
+    "test": "jest --coverage",
+    "prepublish": "babel --root-mode upward src --out-dir lib",
+    "build": "tsc"
+  },
+  "author": "Lukas Aichbauer <l.aichbauer@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "components",
+    "react",
+    "react-component",
+    "ui",
+    "styled-components",
+    "button",
+    "bootstrap",
+    "presentational",
+    "stateless"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aichbauer/styled-bootstrap-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aichbauer/styled-bootstrap-components/issues"
+  },
+  "homepage": "https://github.com/aichbauer/styled-bootstrap-components",
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "../../jest.transformer.js"
+    }
+  },
+  "dependencies": {
+    "styled-base-components": "^4.0.0",
+    "styled-config": "^4.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.7.0",
+    "styled-components": "^4.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "jest": "^23.6.0",
+    "jest-styled-components": "^6.3.1",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-test-renderer": "^16.7.0",
+    "regenerator-runtime": "^0.13.1"
+  }
+}

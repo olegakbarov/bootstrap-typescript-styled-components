@@ -9,10 +9,7 @@
     },
     "module": "esnext",
     "target": "es5",
-    "lib": [
-      "es6",
-      "dom"
-    ],
+    "lib": ["es6", "dom"],
     "sourceMap": true,
     "allowJs": true,
     "jsx": "preserve",
@@ -26,27 +23,16 @@
     "strictNullChecks": true,
     "pretty": true,
     "removeComments": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "typeRoots": ["node_modules/@types"],
     "allowSyntheticDefaultImports": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "esModuleInterop": true,
     "strict": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "noEmit": true,
     "noUnusedLocals": false
   },
-  "include": [
-    "vendor.d.ts",
-    "packages/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts",
-    "webpack",
-    "jest"
-  ]
+  "include": ["vendor.d.ts", "packages/**/*"],
+  "exclude": ["node_modules", "build", "scripts", "webpack", "jest"]
 }
