@@ -4,5 +4,10 @@
   ],
   "version": "4.0.1",
   "npmClient": "yarn",
-  "useWorkspaces": true
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "registry": "https://npm.pkg.github.com"
+    }
+  }
 }

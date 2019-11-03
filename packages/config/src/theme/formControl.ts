@@ -1,5 +1,5 @@
 import shared from "./shared";
-import { Theme, ThemedProps } from "@bootstrap-styled-components/config";
+import { Theme, ThemedProps } from "@typestrap/config";
 
 type FormControlOwnProps =
   | "readonly"

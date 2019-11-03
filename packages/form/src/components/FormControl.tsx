@@ -237,11 +237,12 @@ const FormControlInput = styled(Input)``;
 // TODO ${formControlStyle};
 const FormControlTextarea = styled(Textarea)``;
 
+// TODO ${formControlStyle};
 const FormControlSelect = styled(Select)`
-  ${formControlStyle};
   &:focus::-ms-value {
     color: ${(props: Props) => getColor(props, "formControl", "color")};
-    background-color: ${props => getColor(props, "formControl", "background")};
+    background-color: ${(props: Props) =>
+      getColor(props, "formControl", "background")};
   }
 `;
 

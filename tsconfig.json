@@ -1,11 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": "./packages",
-    "outDir": "dist",
+    "baseUrl": ".",
+    // "rootDir": ".",
     "paths": {
-      "@typestrap/base": ["base/src"],
-      "@typestrap/config": ["config/src"],
-      "@typestrap/form": ["base/form"]
+      "@typestrap/*": ["packages/*/src"]
     },
     "module": "esnext",
     "target": "es5",
@@ -14,7 +12,6 @@
     "allowJs": true,
     "jsx": "preserve",
     "moduleResolution": "node",
-    "rootDir": ".",
     "forceConsistentCasingInFileNames": false,
     "noImplicitReturns": true,
     "noImplicitAny": false,
@@ -30,9 +27,8 @@
     "strict": true,
     "resolveJsonModule": true,
     "isolatedModules": false,
-    "noEmit": true,
-    "noUnusedLocals": false
+    "noLib": false
   },
   "include": ["vendor.d.ts", "packages/**/*"],
-  "exclude": ["node_modules", "build", "scripts", "webpack", "jest"]
+  "exclude": ["node_modules", "build", "scripts"]
 }

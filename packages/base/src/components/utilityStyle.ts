@@ -3,7 +3,7 @@ import {
   theme,
   colorScheme,
   getConcreteBreakpointSize
-} from "@bootstrap-styled-components/config";
+} from "@typestrap/config";
 
 interface Props {
   hidden: boolean;

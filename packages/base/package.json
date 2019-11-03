@@ -6,7 +6,9 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "build": "tsc"
+    "compile": "tsc -b tsconfig.json",
+    "clean": "rm -rf ./lib && rm -rf tsconfig.build.tsbuildinfo",
+    "build": "npm run clean && npm run compile"
   },
   "keywords": [
     "bootstrap",

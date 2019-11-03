@@ -3,8 +3,9 @@
   "version": "4.0.1",
   "description": "Form components and helpers",
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "compile": "tsc -b tsconfig.json",
+    "clean": "rm -rf ./lib && rm -rf tsconfig.build.tsbuildinfo",
+    "build": "npm run clean && npm run compile"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

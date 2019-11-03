@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
-import { Div } from "@bootstrap-styled-components/base";
-import { theme, getStyle } from "@bootstrap-styled-components/config";
-import { Props } from "../types";
+import { Div } from "@typestrap/base";
+import { theme, getStyle, ButtonProps as Props } from "@typestrap/config";
 
 const size = (props: Props) => {
   const { theme, lg, sm } = props;

@@ -2,13 +2,18 @@
   "name": "@typestrap/button",
   "version": "4.0.1",
   "description": "The bootstrap button component created with styled-components",
-  "main": "./lib/index.js",
+  "entrypoint": "./lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "private": false,
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "build": "tsc"
+    "compile": "tsc -b tsconfig.json",
+    "clean": "rm -rf ./lib && rm -rf tsconfig.build.tsbuildinfo",
+    "build": "npm run clean && npm run compile"
   },
   "license": "MIT",
   "keywords": [
