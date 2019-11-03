@@ -4,6 +4,9 @@
   "description": "The bootstrap button component created with styled-components",
   "main": "./lib/index.js",
   "private": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "test": "jest --coverage",
     "prepublish": "babel --root-mode upward src --out-dir lib",

@@ -2,6 +2,9 @@
   "name": "@bootstrap-styled-components/base",
   "version": "4.0.0",
   "description": "Base components",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "build": "tsc"
   },

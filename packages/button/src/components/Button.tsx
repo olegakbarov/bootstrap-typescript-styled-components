@@ -1,8 +1,4 @@
-import styled, {
-  css,
-  StyledComponent,
-  StyledComponentBase
-} from "styled-components";
+import styled, { css, StyledComponentBase } from "styled-components";
 import {
   Utilities,
   A,
@@ -11,7 +7,6 @@ import {
 
 import {
   theme,
-  Theme,
   getColor,
   getStyle,
   getBreakpointSize,

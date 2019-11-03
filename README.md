@@ -11,7 +11,6 @@ Originally a fork from [styled-bootstrap-components](https://github.com/aichbaue
 
 ## Table of Contents
 
-- [Documentation](https://aichbauer.github.io/styled-bootstrap-components)
 - [Installation](#installation)
 - [Usage](#Usage)
 - [Components](#components)

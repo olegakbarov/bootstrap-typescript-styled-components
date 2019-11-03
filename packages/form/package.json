@@ -2,6 +2,9 @@
   "name": "@bootstrap-styled-components/form",
   "version": "4.0.0",
   "description": "Form components and helpers",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "keywords": [
     "form",
     "bootstrap",

@@ -2,6 +2,9 @@
   "name": "@bootstrap-styled-components/config",
   "version": "4.0.0",
   "description": "Configuration for boostrap-styled-components",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "keywords": [
     "bootstrap",
     "styled",
