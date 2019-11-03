@@ -1,6 +1,6 @@
 {
   "name": "@typestrap/form",
-  "version": "4.0.1-alpha.0",
+  "version": "4.0.1-alpha.1",
   "description": "Form components and helpers",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
