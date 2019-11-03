@@ -18,7 +18,15 @@ Originally a fork from [styled-bootstrap-components](https://github.com/aichbaue
 
 ## Installation
 
-TODO
+Example:
+
+```sh
+npm install @typestrap/button@4.0.1-alpha.1
+
+or
+
+yarn add @typestrap/button@4.0.1-alpha.1
+```
 
 ## Usage
 
