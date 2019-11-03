@@ -14,7 +14,7 @@ Originally a fork from [styled-bootstrap-components](https://github.com/aichbaue
 - [Installation](#installation)
 - [Usage](#Usage)
 - [Components](#components)
-- [License](#license)
+- [License](https://github.com/typestrap/bootstrap-typescript-styled-components/blob/master/LICENSE)
 
 ## Installation
 
@@ -28,8 +28,4 @@ TODO
 
 TODO
 
-## License
-
-TODO
-
-MIT © Oleg Akbarov
+MIT © Oleg Akbarov and contributors

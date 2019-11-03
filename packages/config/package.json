@@ -10,7 +10,7 @@
     "styled",
     "components"
   ],
-  "homepage": "https://github.com/typestrap/bootstrap-styled-components",
+  "homepage": "https://github.com/typestrap/bootstrap-typescript-styled-components",
   "license": "MIT",
   "main": "lib/index.js",
   "directories": {
@@ -22,12 +22,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/typestrap/bootstrap-styled-components.git"
+    "url": "git+https://github.com/typestrap/bootstrap-typescript-styled-components.git"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
-    "url": "https://github.com/typestrap/bootstrap-styled-components/issues"
+    "url": "https://github.com/typestrap/bootstrap-typescript-styled-components/issues"
   }
 }
