@@ -1,6 +1,6 @@
 {
   "name": "@typestrap/form",
-  "version": "4.0.1-alpha.1",
+  "version": "4.0.1",
   "description": "Form components and helpers",
   "scripts": {
     "build": "tsc",

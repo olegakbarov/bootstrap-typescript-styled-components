@@ -1,6 +1,6 @@
 {
   "name": "@typestrap/base",
-  "version": "4.0.1-alpha.1",
+  "version": "4.0.1",
   "description": "Base components",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

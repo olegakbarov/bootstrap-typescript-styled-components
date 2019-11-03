@@ -1,6 +1,6 @@
 {
   "name": "@typestrap/config",
-  "version": "4.0.1-alpha.1",
+  "version": "4.0.1",
   "description": "Configuration for boostrap-styled-components",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
