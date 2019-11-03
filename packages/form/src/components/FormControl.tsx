@@ -1,13 +1,13 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
-import { Input, Textarea, Select } from "@bootstrap-styled-components/base";
+import { Input, Textarea, Select } from "@typestrap/base";
 import {
   theme,
   getColor,
   getStyle,
   getConcreteBreakpointSize,
   FormControlProps as Props
-} from "@bootstrap-styled-components/config";
+} from "@typestrap/config";
 
 const backgroundColor = (props: Props) => {
   if (props.disabled || props.readonly) {
@@ -231,13 +231,11 @@ const formControlStyle = () => css`
     ${(props: Props) => height(props)}
   `;
 
-const FormControlInput = styled(Input)`
-  ${formControlStyle};
-`;
+// TODO ${formControlStyle};
+const FormControlInput = styled(Input)``;
 
-const FormControlTextarea = styled(Textarea)`
-  ${formControlStyle};
-`;
+// TODO ${formControlStyle};
+const FormControlTextarea = styled(Textarea)``;
 
 const FormControlSelect = styled(Select)`
   ${formControlStyle};

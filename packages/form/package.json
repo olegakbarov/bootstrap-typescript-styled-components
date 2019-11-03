@@ -2,6 +2,10 @@
   "name": "@typestrap/form",
   "version": "4.0.1-alpha.1",
   "description": "Form components and helpers",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
@@ -25,7 +29,12 @@
     "type": "git",
     "url": "git+https://github.com/typestrap/bootstrap-typescript-styled-components"
   },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+  "dependencies": {
+    "@typestrap/base": "^4.0.0",
+    "@typestrap/config": "^4.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.7.0",
+    "styled-components": "^4.1.2"
   }
 }

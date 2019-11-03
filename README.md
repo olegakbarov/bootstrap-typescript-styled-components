@@ -22,9 +22,11 @@ Example:
 
 ```sh
 npm install @typestrap/button@4.0.1-alpha.1
+```
 
 or
 
+```
 yarn add @typestrap/button@4.0.1-alpha.1
 ```
 

@@ -1,9 +1,5 @@
 import styled, { css, StyledComponentBase } from "styled-components";
-import {
-  Utilities,
-  A,
-  Button as BaseButton
-} from "@bootstrap-styled-components/base";
+import { Utilities, A, Button as BaseButton } from "@typestrap/base";
 
 import {
   theme,
@@ -11,7 +7,7 @@ import {
   getStyle,
   getBreakpointSize,
   ButtonProps as Props
-} from "@bootstrap-styled-components/config";
+} from "@typestrap/config";
 
 const boxShadow = (props: Props) =>
   css`

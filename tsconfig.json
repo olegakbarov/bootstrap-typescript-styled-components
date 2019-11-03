@@ -3,9 +3,9 @@
     "baseUrl": "./packages",
     "outDir": "dist",
     "paths": {
-      "@bootstrap-styled-components/base": ["base/src"],
-      "@bootstrap-styled-components/config": ["config/src"],
-      "@bootstrap-styled-components/form": ["base/form"]
+      "@typestrap/base": ["base/src"],
+      "@typestrap/config": ["config/src"],
+      "@typestrap/form": ["base/form"]
     },
     "module": "esnext",
     "target": "es5",
