@@ -1,5 +1,5 @@
 {
-  "name": "styled-button-component",
+  "name": "@typestrap/button",
   "version": "4.0.1-alpha.0",
   "description": "The bootstrap button component created with styled-components",
   "main": "./lib/index.js",
@@ -12,7 +12,7 @@
     "prepublish": "babel --root-mode upward src --out-dir lib",
     "build": "tsc"
   },
-  "author": "Lukas Aichbauer <l.aichbauer@gmail.com>",
+  "author": "Oleg Akbarov <olegakbarov@gmail.com>",
   "license": "MIT",
   "keywords": [
     "components",
@@ -21,18 +21,16 @@
     "ui",
     "styled-components",
     "button",
-    "bootstrap",
-    "presentational",
-    "stateless"
+    "bootstrap"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aichbauer/styled-bootstrap-components.git"
+    "url": "git+https://github.com/olegakbarov/bootstrap-styled-components.git"
   },
   "bugs": {
-    "url": "https://github.com/aichbauer/styled-bootstrap-components/issues"
+    "url": "https://github.com/typestrap/bootstrap-styled-components/issues"
   },
-  "homepage": "https://github.com/aichbauer/styled-bootstrap-components",
+  "homepage": "https://github.com/typestrap/bootstrap-styled-components",
   "jest": {
     "transform": {
       "^.+\\.jsx?$": "../../jest.transformer.js"

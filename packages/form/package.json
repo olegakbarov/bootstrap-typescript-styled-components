@@ -1,5 +1,5 @@
 {
-  "name": "@bootstrap-styled-components/form",
+  "name": "@typestrap/form",
   "version": "4.0.1-alpha.0",
   "description": "Form components and helpers",
   "publishConfig": {
@@ -11,8 +11,7 @@
     "styled",
     "components"
   ],
-  "author": "Oleg Akbarov <olegakbarov@gmail.com>",
-  "homepage": "https://github.com/olegakbarov/bootstrap-styled-components",
+  "homepage": "https://github.com/typestrap/bootstrap-styled-components",
   "license": "MIT",
   "main": "lib/index.js",
   "directories": {
@@ -24,12 +23,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/olegakbarov/bootstrap-styled-components.git"
+    "url": "git+https://github.com/typestrap/bootstrap-styled-components"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
-  },
-  "bugs": {
-    "url": "https://github.com/olegakbarov/bootstrap-styled-components/issues"
   }
 }
